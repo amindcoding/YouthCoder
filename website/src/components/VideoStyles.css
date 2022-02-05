@@ -14,7 +14,7 @@
 
 .hero .content {
   text-align: center;
-  position: absolute;
+  position: relative;
   margin: auto;
   width: 100%;
   height: 100%;
@@ -22,16 +22,16 @@
 }
 
 .hero .content h1 {
-  font-size: 2rem;
+  font-size: 3rem;
   color: #fff;
+  font-weight: lighter bolder;
 }
 
 .hero p {
-  font-size: 1.8rem;
-  font-weight: 200;
-  text-transform: uppercase;
+  font-size: 2rem;
   margin-bottom: 1.6rem;
   color: #fff;
+  font-weight: lighter bolder;
 }
 
 .hero .btn {

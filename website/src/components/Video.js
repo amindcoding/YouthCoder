@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "./VideoStyles.css";
 
-import backgroundVideo from "../assets/background.mp4";
+import backgroundVideo from "../assets/background2.mp4";
 
 const Video = () => {
   return (
@@ -13,15 +13,14 @@ const Video = () => {
       <div className="content">
         <h1>Welcome To Youth Code Web!</h1>
         <p>
-          If you want to learn about web programming you can click JOIN button
-          to Join Us, and click ARTICKEL button if you want to learn more.
-        </p>
+          If you want to learn about web programming you can click The Join Us,
+        </p> <p>and click Articel if you want to learn more.</p>
         <div>
-          <Link to="/training" className="btn">
-            Join
+          <Link to="/training" className="btn btn-light">
+            Join Us
           </Link>
-          <Link to="/contact" className="btn btn-light">
-            Launch
+          <Link to="/pricing" className="btn">
+            Articel
           </Link>
         </div>
       </div>
