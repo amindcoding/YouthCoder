@@ -11,7 +11,7 @@
 
 .header-bg {
   background-color: rgba(0, 0, 0, 0.85);
-  transition: 0.5s;
+  transition: 0.1s;
 }
 
 .nav-menu {
@@ -26,7 +26,7 @@
   font-size: 1.2rem;
   font-weight: 500;
 }
-.nav-menu li a:hover{
+.nav-menu li a:hover {
   background-color: white;
   color: black;
   box-shadow: 0 0 10px aquamarine;
