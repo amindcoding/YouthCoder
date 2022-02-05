@@ -1,6 +1,6 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import "./PricingStyles.css";
+import React from 'react';
+import { Link } from 'react-router-dom';
+import './css/PricingStyles.css';
 
 const Pricing = () => {
   return (

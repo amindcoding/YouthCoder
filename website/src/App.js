@@ -1,21 +1,21 @@
-import React from 'react'
-import {Routes, Route} from 'react-router-dom'
+import React from 'react';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 import Contact from './routes/Contact';
 
-import Home from './routes/Home'
-import Pricing from './routes/Pricing'
+import Home from './routes/Home';
+import Pricing from './routes/Pricing';
 import Training from './routes/Training';
 
 function App() {
   return (
-    <>
-      <Routes>
-        <Route path='/' element={<Home />} />
-        <Route path='/pricing' element={<Pricing />} />
-        <Route path='/training' element={<Training />} />
-        <Route path='/contact' element={<Contact />} />
-      </Routes>
-    </>
+    <div>
+      <Route>
+        <Router exact path="/" element={<Home />} />
+        <Router exact path="/pricing" element={<Pricing />} />
+        <Router exact path="/training" element={<Training />} />
+        <Router exact path="/contact" element={<Contact />} />
+      </Route>
+    </div>
   );
 }
 
