@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import './css/VideoStyles.css';
+import './VideoStyles.css';
 
 import backgroundVideo from '../assets/background2.mp4';
 
