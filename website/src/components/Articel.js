@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+//import { Link } from "react-router-dom";
 import "./ArticelStyles.css";
 
 const Articel = () => {
@@ -10,32 +10,43 @@ const Articel = () => {
           <h3>- Basic -</h3>
           <span className="bar"></span>
           <p className="btc">HTML Dan CSS</p>
-          <p>- Belajar HTML dan CSS dengan mudah -</p>
-          <Link
-            hrefLang="https://ptgmedia.pearsoncmg.com/images/9780321940520/samplepages/0321940520.pdf"
-            className="btn"
+          <p>- Klik Book untuk unduh pdf -</p>
+          <a
+            href="./src/assets/book/Belajar_HTML_dan_CSS.pdf"
+            download="Belajar HTML dan CSS"
           >
-            Book
-          </Link>
+            <button className="btn" type="download">
+              Book
+            </button>
+          </a>
         </div>
         <div className="card">
           <h3>- Suite -</h3>
           <span className="bar"></span>
-          <p className="btc">JavaScript</p>
+          <p className="btc">Java Script</p>
           <p>- Views -</p>
-          <Link to="/contact" className="btn">
-            Book
-          </Link>
+          <a
+            href="../assets/eBook/Belajar_HTML_dan_CSS.pdf"
+            download="Belajar HTML dan CSS"
+          >
+            <button className="btn" type="download">
+              Book
+            </button>
+          </a>
         </div>
         <div className="card">
           <h3>- Executive -</h3>
           <span className="bar"></span>
-          <p className="btc">NodeJs</p>
-          <p>- 3 Days -</p>
+          <p className="btc">ReactJS </p>
           <p>- Views -</p>
-          <Link to="/contact" className="btn">
-            Book
-          </Link>
+          <a
+            href="../assets/eBook/Belajar_HTML_dan_CSS.pdf"
+            download="Belajar HTML dan CSS"
+          >
+            <button className="btn" type="download">
+              Book
+            </button>
+          </a>
         </div>
       </div>
     </div>
