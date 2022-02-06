@@ -14,11 +14,8 @@ const Video = () => {
         <h1>Welcome To Youth Code Web!</h1>
         <p>If you want to learn about web programming you can click The Join Us,</p> <p>and click Articel if you want to learn more.</p>
         <div>
-          <Link to="/training" className="btn btn-light">
-            Join Us
-          </Link>
-          <Link to="/pricing" className="btn">
-            Articel
+          <Link to="/SignupComponent" className="btn btn-light">
+            Sign Up
           </Link>
         </div>
       </div>

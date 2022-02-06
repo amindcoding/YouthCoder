@@ -1,4 +1,4 @@
-.pricing {
+.articel {
   width: 100%;
   padding: 6rem 1rem;
   background-color: #000;
@@ -44,7 +44,7 @@
   padding: 1rem;
 }
 
-.pricing p {
+.articel p {
   color: #eee;
   padding: 1rem 0;
   font-size: 1.2rem;

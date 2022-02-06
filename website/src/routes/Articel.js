@@ -1,18 +1,18 @@
 import React from 'react'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
-import PricingCards from '../components/Pricing'
+import ArticelCards from '../components/Articel'
 import Image from '../components/Image'
 
-const Pricing = () => {
+const Articel = () => {
     return (
         <div>
             <Navbar />
             <Image heading='ARTICEL' text='What do you want to learn?' />
-            <PricingCards />
+            <ArticelCards />
             <Footer />
         </div>
     )
 }
 
-export default Pricing
+export default Articel

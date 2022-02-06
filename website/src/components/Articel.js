@@ -1,17 +1,20 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import './PricingStyles.css';
+import React from "react";
+import { Link } from "react-router-dom";
+import "./ArticelStyles.css";
 
-const Pricing = () => {
+const Articel = () => {
   return (
-    <div className="pricing">
+    <div className="articel">
       <div className="card-container">
         <div className="card">
           <h3>- Basic -</h3>
           <span className="bar"></span>
           <p className="btc">HTML Dan CSS</p>
-          <p>- Views -</p>
-          <Link to="/contact" className="btn">
+          <p>- Belajar HTML dan CSS dengan mudah -</p>
+          <Link
+            hrefLang="https://ptgmedia.pearsoncmg.com/images/9780321940520/samplepages/0321940520.pdf"
+            className="btn"
+          >
             Book
           </Link>
         </div>
@@ -39,4 +42,4 @@ const Pricing = () => {
   );
 };
 
-export default Pricing;
+export default Articel;

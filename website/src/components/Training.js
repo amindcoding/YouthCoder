@@ -10,7 +10,7 @@ const Training = () => {
   return (
     <div className="training">
       <div className="left">
-        <h1>Training</h1>
+        <h1>LOGIN</h1>
         <p>Thorough training is a necessity when traveling to space. We offer all inclusive training for pre-flight and in-flight scenarios.</p>
         <Link to="/contact">
           <button className="btn">Contact</button>

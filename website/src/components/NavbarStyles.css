@@ -25,6 +25,7 @@
 .nav-menu a {
   font-size: 1.2rem;
   font-weight: 500;
+  text-transform: capitalize;
 }
 .nav-menu li a:hover {
   background-color: white;
