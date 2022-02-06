@@ -4,7 +4,7 @@ import Contact from './routes/Contact';
 import Home from './routes/Home';
 import Training from './routes/Training';
 import Articel from './components/Articel';
-import SignupComponent from './components/SignupComponent';
+import Signup from './routes/Signup';
 function App() {
   return (
     <>
@@ -13,7 +13,7 @@ function App() {
         <Route exact path="/articel" element={<Articel />} />
         <Route exact path="/training" element={<Training />} />
         <Route exact path="/contact" element={<Contact />} />
-        <Route exact path='/signup' element={<SignupComponent />} />
+        <Route exact path='/signup' element={<Signup />} />
       </Routes>
     </>
   );
