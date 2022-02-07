@@ -3,7 +3,7 @@ import { Nav, Navbar, NavbarBrand, NavbarToggler, Collapse, NavItem, NavLink, Un
 const NavbarComponent = () => {
   return (
     <div>
-      <Navbar color="dark" container="sm" expand="sm" fixed="top" dark>
+      <Navbar color="dark" container="sm" expand="sm" fixed="" dark>
         <NavbarBrand href="/">Home</NavbarBrand>
         <NavbarToggler onClick={function noRefCheck() {}} />
         <Collapse navbar>
