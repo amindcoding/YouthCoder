@@ -1,15 +1,23 @@
 import React from "react";
-import { Container, Form, FormGroup, Input, Label } from "reactstrap";
+import { Col, Container, Form, FormGroup, Input, Label, Row } from "reactstrap";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faBackspace } from "@fortawesome/free-solid-svg-icons";
 
 export const LoginComponent = () => {
   return (
     <Container>
       <div className="card-body p-4 p-md-5">
-        <h3 className="mb-4 pb-2 pb-md-0 mb-md-5">Login Form</h3>
-        <p className="mb-2">
-          Please enter your username and password!
-        </p>
-
+        <Row>
+          <Col>
+            <h3 className="mb-4 pb-2 pb-md-0 mb-md-5">Form Login</h3>
+            <p className="mb-2">Masukkan username dan password anda!</p>
+          </Col>
+          <Col>
+            <a href="/" className="btn btn-primary float-end">
+              Back To Home <FontAwesomeIcon icon={faBackspace} />
+            </a>
+          </Col>
+        </Row>
         <Form inline>
           <FormGroup>
             <Label for="userName">Username</Label>
@@ -40,9 +48,9 @@ export const LoginComponent = () => {
 
           <div>
             <p className="mb-0">
-              Don't have an account?{" "}
+              Tidak punya akun?{" "}
               <a href="/register" className="fw-bold">
-                Register
+                Daftar disini
               </a>
             </p>
           </div>

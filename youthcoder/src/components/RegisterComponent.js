@@ -22,7 +22,7 @@ const RegisterComponent = () => {
     id: "",
     firstName: "",
     lastName: "",
-    age: null,
+    age: "",
     gender: "",
     email: "",
     phoneNumber: "",
@@ -72,7 +72,7 @@ const RegisterComponent = () => {
       id: "",
       firstName: "",
       lastName: "",
-      age: null,
+      age: "",
       gender: "",
       email: "",
       phoneNumber: "",
@@ -86,7 +86,7 @@ const RegisterComponent = () => {
       <div className="card-body p-4 p-md-5">
         <Row>
           <Col>
-            <h3 className="mb-4 pb-2 pb-md-0 mb-md-5">Registration Form</h3>
+            <h3 className="mb-4 pb-2 pb-md-0 mb-md-5">Form Registrasi Akun</h3>
           </Col>
           <Col>
             <a href="/" className="btn btn-primary float-end">
@@ -98,11 +98,11 @@ const RegisterComponent = () => {
           <Row>
             <Col className="col-md-6 mb-2">
               <FormGroup>
-                <Label for="firstName">First Name</Label>
+                <Label for="firstName">Nama Depan</Label>
                 <Input
                   id="firstName"
                   name="firstName"
-                  placeholder="First Name"
+                  placeholder="Nama Depan"
                   type="text"
                   onChange={handleChange}
                   value={formData.firstName}
@@ -112,11 +112,11 @@ const RegisterComponent = () => {
             </Col>
             <Col className="col-md-6 mb-2">
               <FormGroup>
-                <Label for="lastName">Last Name</Label>
+                <Label for="lastName">Nama Belakang</Label>
                 <Input
                   id="lastName"
                   name="lastName"
-                  placeholder="Last Name"
+                  placeholder="Nama Belakang"
                   type="text"
                   onChange={handleChange}
                   value={formData.lastName}
@@ -128,11 +128,11 @@ const RegisterComponent = () => {
           <Row>
             <Col className="col-md-6 mb-2">
               <FormGroup>
-                <Label for="exampleAge">Age</Label>
+                <Label for="exampleAge">Usia</Label>
                 <Input
                   id="exampleAge"
                   name="age"
-                  placeholder="Age"
+                  placeholder="Usia"
                   type="number"
                   min={17}
                   onChange={handleChange}
@@ -143,14 +143,19 @@ const RegisterComponent = () => {
             </Col>
             <Col className="col-ms-6 mb-2">
               <FormGroup>
-                <Label for="exampleSelect">Gender</Label>
-                <Input id="exampleSelect" name="gender" type="select">
-                  <option>Male</option>
-                  <option>Female</option>
+                <Label for="exampleGender">Jenis Kelamin (L/P)</Label>
+                <Input
+                  className="text-uppercase"
+                  id="exampleGender"
+                  name="gender"
+                  placeholder="L / P"
+                  type="text"
+                  maxLength={1}
+                  pattern="[A-Z]{1}"
                   onChange={handleChange}
                   value={formData.gender}
                   required
-                </Input>
+                />
               </FormGroup>
             </Col>
           </Row>
@@ -171,11 +176,11 @@ const RegisterComponent = () => {
             </Col>
             <Col className="col-md-6 mb-2">
               <FormGroup>
-                <Label for="phoneNumber">Phone Number</Label>
+                <Label for="phoneNumber">Nomor Telepon</Label>
                 <Input
                   id="phoneNumber"
                   name="phoneNumber"
-                  placeholder="Phone Number"
+                  placeholder="Nomor Telepon"
                   type="tel"
                   onChange={handleChange}
                   value={formData.phoneNumber}
@@ -218,15 +223,15 @@ const RegisterComponent = () => {
             <Input
               className="btn btn-primary btn-lg"
               type="submit"
-              value="Submit"
+              value="Daftar"
             />
           </div>
 
           <div>
             <p className="mb-0">
-              Already have an account?{" "}
+              Sudah punya akun?{" "}
               <a href="/login" className="fw-bold">
-                Log in
+                Login disini
               </a>
             </p>
           </div>
