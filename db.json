@@ -1,0 +1,37 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "firstName": "Muhamad",
+      "lastName": "Ayyub",
+      "usia": 19,
+      "gender": "Male",
+      "email": "ayyub@gmail.com",
+      "phoneNumber": "085852741963",
+      "username": "userAyyub",
+      "password": "12345678"
+    },
+    {
+      "id": 2,
+      "firstName": "Amin",
+      "lastName": "Rizki",
+      "usia": 19,
+      "gender": "Male",
+      "email": "rizki@gmail.com",
+      "phoneNumber": "085852741963",
+      "username": "userRizki",
+      "password": "12345678"
+    },
+    {
+      "id": 3,
+      "firstName": "Sisca",
+      "lastName": "Amelia",
+      "age": 19,
+      "gender": "Female",
+      "email": "amelia@gmail.com",
+      "phoneNumber": "085852741963",
+      "username": "userAmel",
+      "password": "12345678"
+    }
+  ]
+}
