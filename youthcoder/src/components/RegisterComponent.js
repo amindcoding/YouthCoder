@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { Col, Container, Form, FormGroup, Input, Label, Row } from "reactstrap";
 
 const RegisterComponent = () => {
@@ -95,6 +95,30 @@ const RegisterComponent = () => {
               </FormGroup>
             </Col>
           </Row>
+          <Row>
+              <Col className="col-md-6 mb-2">
+                <FormGroup>
+                <Label for="userName">Username</Label>
+                <Input
+                  id="userName"
+                  name="userName"
+                  placeholder="Username"
+                  type="text"
+                />
+                </FormGroup>
+              </Col>
+              <Col className="col-md-6 mb-2">
+                <FormGroup>
+                <Label for="password">Password</Label>
+                <Input
+                  id="password"
+                  name="password"
+                  placeholder="Password"
+                  type="password"
+                />
+                </FormGroup>
+              </Col>
+          </Row>
           <div className="mt-4 pt-2">
             <Input
               className="btn btn-primary btn-lg"
@@ -102,6 +126,16 @@ const RegisterComponent = () => {
               value="Submit"
             />
           </div>
+
+          <div>
+            <p className="mb-0">
+              Already have an account?{" "}
+              <a href="/login" className="fw-bold">
+                Log in
+              </a>
+            </p>
+          </div>
+
         </Form>
       </div>
     </Container>
