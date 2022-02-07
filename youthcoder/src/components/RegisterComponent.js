@@ -46,8 +46,6 @@ const RegisterComponent = () => {
 
   function handleSubmit(e) {
     e.preventDefault();
-    alert("Registered successfuly!");
-
     let data = [...users];
 
     let newData = {
@@ -135,6 +133,7 @@ const RegisterComponent = () => {
                   placeholder="Usia"
                   type="number"
                   min={17}
+                  title="Minimal berusia 17 tahun"
                   onChange={handleChange}
                   value={formData.age}
                   required
@@ -151,7 +150,8 @@ const RegisterComponent = () => {
                   placeholder="L / P"
                   type="text"
                   maxLength={1}
-                  pattern="[A-Z]{1}"
+                  pattern="[LP]"
+                  title="Hanya huruf L / P"
                   onChange={handleChange}
                   value={formData.gender}
                   required
@@ -182,6 +182,8 @@ const RegisterComponent = () => {
                   name="phoneNumber"
                   placeholder="Nomor Telepon"
                   type="tel"
+                  pattern="[0-9]{11,}"
+                  title="Hanya boleh menggunakan angka, setidaknya 11 angka atau lebih"
                   onChange={handleChange}
                   value={formData.phoneNumber}
                   required
@@ -198,6 +200,8 @@ const RegisterComponent = () => {
                   name="username"
                   placeholder="Username"
                   type="text"
+                  pattern="(?=.*\d).{5,}" 
+                  title="Harus mengandung minimal satu angka, dan setidaknya 5 karakter atau lebih"
                   onChange={handleChange}
                   value={formData.username}
                   required
@@ -212,6 +216,8 @@ const RegisterComponent = () => {
                   name="password"
                   placeholder="Password"
                   type="password"
+                  pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+                  title="Harus mengandung minimal satu huruf kecil satu huruf besar satu angka, dan setidaknya 8 karakter atau lebih"
                   onChange={handleChange}
                   value={formData.password}
                   required

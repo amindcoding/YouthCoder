@@ -1,6 +1,27 @@
-import React from 'react';
-import { Nav, Navbar, NavbarBrand, NavbarToggler, Collapse, NavItem, NavLink, UncontrolledDropdown, DropdownToggle, DropdownMenu, DropdownItem, NavbarText } from 'reactstrap';
+import React from "react";
+import {
+  Nav,
+  Navbar,
+  NavbarBrand,
+  NavbarToggler,
+  Collapse,
+  NavItem,
+  NavLink,
+  UncontrolledDropdown,
+  DropdownToggle,
+  DropdownMenu,
+  DropdownItem,
+  NavbarText,
+  Button,
+} from "reactstrap";
 const NavbarComponent = () => {
+  const userInfo = localStorage.getItem("userInfo");
+
+  const logoutUser = () => {
+    localStorage.clear();
+    window.location.href = "/login";
+  };
+
   return (
     <div>
       <Navbar color="dark" container="sm" expand="sm" fixed="" dark>
@@ -16,14 +37,23 @@ const NavbarComponent = () => {
             </NavItem>
           </Nav>
           <UncontrolledDropdown>
-            <DropdownToggle color="light" caret>
-              Aksi
-            </DropdownToggle>
-            <DropdownMenu right>
+            {userInfo ? (
+              <div>
+              <DropdownToggle color="light" caret>
+                {  JSON.parse(userInfo).username}
+              </DropdownToggle>
+              <DropdownMenu right>
               <DropdownItem>Admin</DropdownItem>
               <DropdownItem divider />
-              <DropdownItem href="/login">Log Out</DropdownItem>
+              <DropdownItem onClick={()=> logoutUser()}>Log Out</DropdownItem>
             </DropdownMenu>
+              </div>
+            ) : (
+              <Button className="btn btn-light" href="/login/">Login</Button>
+              // <DropdownToggle color="light" caret>
+              //   Login
+              // </DropdownToggle>
+            )}
           </UncontrolledDropdown>
         </Collapse>
       </Navbar>
