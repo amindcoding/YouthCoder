@@ -17,23 +17,6 @@ import axios from "axios";
 export const ProfileComponent = () => {
   const [users, setUsers] = useState([]);
 
-  const [editProfile, setEditProfile] = useState({ id: null, status: false });
-
-  const userInfo = localStorage.getItem("userInfo");
-  console.log(JSON.parse(userInfo).id);
-
-  const [formData, setFormData] = useState({
-    id: "",
-    firstName: "",
-    lastName: "",
-    age: "",
-    gender: "",
-    email: "",
-    phoneNumber: "",
-    username: "",
-    password: "",
-  });
-
   useEffect(() => {
     //ambil data
     axios.get("http://localhost:3004/users").then((res) => {
@@ -42,23 +25,24 @@ export const ProfileComponent = () => {
     });
   }, []);
 
-  function handleEdit(id) {
-    let data = [...users];
-    let foundData = data.find((users) => users.id === id);
-    setFormData({
-        firstName: foundData.firstName,
-        lastName: foundData.lastName,
-        age: foundData.age,
-        gender: foundData.gender,
-        email: foundData.email,
-        phoneNumber: foundData.phoneNumber,
-        username: foundData.username,
-        password: foundData.password,
-    })  
-    
-    setEditProfile({id: id, status: true});
+  let localUser = localStorage.getItem("userInfo");
+  const userInfo = localUser;
 
-  }
+  const [formData, setFormData] = useState({
+    firstName: JSON.parse(userInfo).firstName,
+    lastName: JSON.parse(userInfo).lastName,
+    age: JSON.parse(userInfo).age,
+    gender: JSON.parse(userInfo).gender,
+    email: JSON.parse(userInfo).email,
+    phoneNumber: JSON.parse(userInfo).phoneNumber,
+    username: JSON.parse(userInfo).username,
+    password: JSON.parse(userInfo).password,
+  });
+
+  const editId = JSON.parse(userInfo).id;
+  const [editProfile, setEditProfile] = useState({
+    id: editId,
+  });
 
   function handleChange(e) {
     let data = { ...formData };
@@ -68,23 +52,27 @@ export const ProfileComponent = () => {
 
   function handleSubmit(e) {
     e.preventDefault();
-    alert("oke");
-    let data = [...users];
+    // alert("oke");
 
-    if (editProfile.status) {
-      if (users.id === JSON.parse(userInfo).id) {
-        users.firstName = formData.firstName;
-        users.lastName = formData.lastName;
-        users.age = formData.age;
-        users.gender = formData.gender;
-        users.email = formData.email;
-        users.phoneNumber = formData.phoneNumber;
-        users.username = formData.username;
-        users.password = formData.password;
-      }
-    }
-    console.log(users.email);
+    let editData = {
+      id: editId,
+      firstName: formData.firstName,
+      lastName: formData.lastName,
+      age: formData.age,
+      gender: formData.gender,
+      email: formData.email,
+      phoneNumber: formData.phoneNumber,
+      username: formData.username,
+      password: formData.password,
+    };
+
+    axios.put("http://localhost:3004/users/" + editId, editData).then((res) => {
+      alert("Berhasil mengedit profil");
+    });
+
+    window.location.href = "/";
   }
+  console.log(editProfile.id);
 
   return (
     <Container>

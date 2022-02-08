@@ -23,7 +23,6 @@ const NavbarComponent = () => {
     let id = JSON.parse(userInfo).id ;
     window.location.href = "/profile/" + id ;
   }
-  console.log(JSON.parse(userInfo).id);
 
   const logoutUser = () => {
     localStorage.clear();
