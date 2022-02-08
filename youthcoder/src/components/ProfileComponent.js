@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import {
   Button,
   Card,
@@ -12,12 +12,16 @@ import {
 } from "reactstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBackspace } from "@fortawesome/free-solid-svg-icons";
-import { uid } from "uid";
 import axios from "axios";
 
-export const RegisterComponent = () => {
+export const ProfileComponent = () => {
   const [users, setUsers] = useState([]);
-  // const [update, setUpdate] = useState({ id:nu});
+
+  const [editProfile, setEditProfile] = useState({ id: null, status: false });
+
+  const userInfo = localStorage.getItem("userInfo");
+  console.log(JSON.parse(userInfo).id);
+
   const [formData, setFormData] = useState({
     id: "",
     firstName: "",
@@ -38,6 +42,24 @@ export const RegisterComponent = () => {
     });
   }, []);
 
+  function handleEdit(id) {
+    let data = [...users];
+    let foundData = data.find((users) => users.id === id);
+    setFormData({
+        firstName: foundData.firstName,
+        lastName: foundData.lastName,
+        age: foundData.age,
+        gender: foundData.gender,
+        email: foundData.email,
+        phoneNumber: foundData.phoneNumber,
+        username: foundData.username,
+        password: foundData.password,
+    })  
+    
+    setEditProfile({id: id, status: true});
+
+  }
+
   function handleChange(e) {
     let data = { ...formData };
     data[e.target.name] = e.target.value;
@@ -46,36 +68,22 @@ export const RegisterComponent = () => {
 
   function handleSubmit(e) {
     e.preventDefault();
+    alert("oke");
     let data = [...users];
 
-    let newData = {
-      id: uid(),
-      firstName: formData.firstName,
-      lastName: formData.lastName,
-      age: formData.age,
-      gender: formData.gender,
-      email: formData.email,
-      phoneNumber: formData.phoneNumber,
-      username: formData.username,
-      password: formData.password,
-    };
-    data.push(newData);
-
-    axios.post("http://localhost:3004/users", newData).then((res) => {
-      alert("Registered successfuly!");
-    });
-
-    setFormData({
-      id: "",
-      firstName: "",
-      lastName: "",
-      age: "",
-      gender: "",
-      email: "",
-      phoneNumber: "",
-      username: "",
-      password: "",
-    });
+    if (editProfile.status) {
+      if (users.id === JSON.parse(userInfo).id) {
+        users.firstName = formData.firstName;
+        users.lastName = formData.lastName;
+        users.age = formData.age;
+        users.gender = formData.gender;
+        users.email = formData.email;
+        users.phoneNumber = formData.phoneNumber;
+        users.username = formData.username;
+        users.password = formData.password;
+      }
+    }
+    console.log(users.email);
   }
 
   return (
@@ -83,7 +91,7 @@ export const RegisterComponent = () => {
       <div className="card-body p-4 p-md-5">
         <Row>
           <Col>
-            <h3 className="mb-4 pb-2 pb-md-0 mb-md-5">Form Registrasi Akun</h3>
+            <h3 className="mb-4 pb-2 pb-md-0 mb-md-5">Edit Profile User</h3>
           </Col>
           <Col>
             <a href="/" className="btn btn-primary float-end">
@@ -199,7 +207,7 @@ export const RegisterComponent = () => {
                   name="username"
                   placeholder="Username"
                   type="text"
-                  pattern="(?=.*\d).{5,}" 
+                  pattern="(?=.*\d).{5,}"
                   title="Harus mengandung minimal satu angka, dan setidaknya 5 karakter atau lebih"
                   onChange={handleChange}
                   value={formData.username}
@@ -228,17 +236,8 @@ export const RegisterComponent = () => {
             <Input
               className="btn btn-primary btn-lg"
               type="submit"
-              value="Daftar"
+              value="Simpan"
             />
-          </div>
-
-          <div>
-            <p className="mb-0">
-              Sudah punya akun?{" "}
-              <a href="/login" className="fw-bold">
-                Login disini
-              </a>
-            </p>
           </div>
         </Form>
       </div>
@@ -246,4 +245,4 @@ export const RegisterComponent = () => {
   );
 };
 
-export default RegisterComponent;
+export default ProfileComponent;

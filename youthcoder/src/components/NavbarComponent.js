@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   Nav,
   Navbar,
@@ -14,8 +14,16 @@ import {
   NavbarText,
   Button,
 } from "reactstrap";
+
 const NavbarComponent = () => {
+  const [users, setUsers] = useState([]);
   const userInfo = localStorage.getItem("userInfo");
+
+  const editUser = () => {
+    let id = JSON.parse(userInfo).id ;
+    window.location.href = "/profile/" + id ;
+  }
+  console.log(JSON.parse(userInfo).id);
 
   const logoutUser = () => {
     localStorage.clear();
@@ -43,9 +51,9 @@ const NavbarComponent = () => {
                 {  JSON.parse(userInfo).username}
               </DropdownToggle>
               <DropdownMenu right>
-              <DropdownItem>Admin</DropdownItem>
+              <DropdownItem onClick={() => editUser()}>Edit Profile</DropdownItem>
               <DropdownItem divider />
-              <DropdownItem onClick={()=> logoutUser()}>Log Out</DropdownItem>
+              <DropdownItem onClick={() => logoutUser()}>Log Out</DropdownItem>
             </DropdownMenu>
               </div>
             ) : (

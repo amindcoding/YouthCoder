@@ -36,8 +36,6 @@ export const LoginComponent = () => {
     }else {
         alert("Username atau Password yang anda masukkan salah!")
     }
-
-    setUsers(data);
   }
 
   return (
