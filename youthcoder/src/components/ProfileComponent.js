@@ -25,8 +25,7 @@ export const ProfileComponent = () => {
     });
   }, []);
 
-  let localUser = localStorage.getItem("userInfo");
-  const userInfo = localUser;
+  const userInfo = localStorage.getItem("userInfo");
 
   const [formData, setFormData] = useState({
     firstName: JSON.parse(userInfo).firstName,
@@ -70,6 +69,7 @@ export const ProfileComponent = () => {
       alert("Berhasil mengedit profil");
     });
 
+    localStorage.setItem("userInfo", JSON.stringify(editData));
     window.location.href = "/";
   }
   console.log(editProfile.id);

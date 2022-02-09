@@ -76,6 +76,8 @@ export const RegisterComponent = () => {
       username: "",
       password: "",
     });
+
+    window.location.href = "/login";
   }
 
   return (
@@ -199,7 +201,7 @@ export const RegisterComponent = () => {
                   name="username"
                   placeholder="Username"
                   type="text"
-                  pattern="(?=.*\d).{5,}" 
+                  pattern="(?=.*\d).{5,}"
                   title="Harus mengandung minimal satu angka, dan setidaknya 5 karakter atau lebih"
                   onChange={handleChange}
                   value={formData.username}
