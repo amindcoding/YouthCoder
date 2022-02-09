@@ -40,16 +40,6 @@ const NavbarComponent = () => {
           <UncontrolledDropdown>
             {userInfo ? (
               <div>
-<<<<<<< Updated upstream
-                <DropdownToggle color="light" caret>
-                  {JSON.parse(userInfo).username}
-                </DropdownToggle>
-                <DropdownMenu right>
-                  <DropdownItem onClick={() => editUser()}>Edit Profile</DropdownItem>
-                  <DropdownItem divider />
-                  <DropdownItem onClick={() => logoutUser()}>Log Out</DropdownItem>
-                </DropdownMenu>
-=======
               <DropdownToggle color="light" caret>
                 {JSON.parse(userInfo).firstName} {  JSON.parse(userInfo).lastName}
               </DropdownToggle>
@@ -58,7 +48,6 @@ const NavbarComponent = () => {
               <DropdownItem divider />
               <DropdownItem onClick={() => logoutUser()}>Log Out</DropdownItem>
             </DropdownMenu>
->>>>>>> Stashed changes
               </div>
             ) : (
               <Button className="btn btn-light" href="/login/">
