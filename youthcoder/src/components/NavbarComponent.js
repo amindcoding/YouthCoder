@@ -5,6 +5,10 @@ const NavbarComponent = () => {
   const [users, setUsers] = useState([]);
   const userInfo = localStorage.getItem('userInfo');
 
+  const listUsers = () => {
+    localStorage.getItem('userInfo');
+  };
+
   const editUser = () => {
     let id = JSON.parse(userInfo).id;
     window.location.href = '/profile/' + id;
@@ -34,20 +38,29 @@ const NavbarComponent = () => {
               <NavLink href="/article/">Artikel</NavLink>
             </NavItem>
             <NavItem>
-              <NavLink href="/forum/">forum</NavLink>
+              <NavLink href="/forum">forum</NavLink>
             </NavItem>
+            {userInfo ? (
+              <NavItem>
+                <NavLink onClick={() => listUsers()} href="/users/">
+                  Users
+                </NavLink>
+              </NavItem>
+            ) : (
+              <span></span>
+            )}
           </Nav>
           <UncontrolledDropdown>
             {userInfo ? (
               <div>
-              <DropdownToggle color="light" caret>
-                {JSON.parse(userInfo).firstName} {  JSON.parse(userInfo).lastName}
-              </DropdownToggle>
-              <DropdownMenu right>
-              <DropdownItem onClick={() => editUser()}>Edit Profile</DropdownItem>
-              <DropdownItem divider />
-              <DropdownItem onClick={() => logoutUser()}>Log Out</DropdownItem>
-            </DropdownMenu>
+                <DropdownToggle color="light" caret>
+                  {JSON.parse(userInfo).firstName} {JSON.parse(userInfo).lastName}
+                </DropdownToggle>
+                <DropdownMenu right>
+                  <DropdownItem onClick={() => editUser()}>Edit Profile</DropdownItem>
+                  <DropdownItem divider />
+                  <DropdownItem onClick={() => logoutUser()}>Log Out</DropdownItem>
+                </DropdownMenu>
               </div>
             ) : (
               <Button className="btn btn-light" href="/login/">

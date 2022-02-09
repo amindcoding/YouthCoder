@@ -4,12 +4,12 @@
       "id": 1,
       "firstName": "Muhamad",
       "lastName": "Ayyub",
-      "usia": 19,
-      "gender": "Male",
+      "age": "18",
+      "gender": "L",
       "email": "ayyub@gmail.com",
       "phoneNumber": "085852741963",
-      "username": "userAyyub",
-      "password": "12345678"
+      "username": "Ayyub123",
+      "password": "Muhayyub123"
     },
     {
       "id": 2,
@@ -24,14 +24,25 @@
     },
     {
       "id": 3,
-      "firstName": "Sisca",
+      "firstName": "Siska",
       "lastName": "Amelia",
-      "age": 19,
-      "gender": "Female",
+      "age": "18",
+      "gender": "P",
       "email": "amelia@gmail.com",
       "phoneNumber": "085852741963",
-      "username": "userAmel",
-      "password": "12345678"
+      "username": "Amelya5",
+      "password": "Siscaamelya5"
+    },
+    {
+      "id": "86232bf033d",
+      "firstName": "Achmad",
+      "lastName": "Firdaus",
+      "age": "19",
+      "gender": "L",
+      "email": "firdaus@gmail.com",
+      "phoneNumber": "082211445566",
+      "username": "Firdaus1",
+      "password": "Firdaus1"
     }
   ]
 }
