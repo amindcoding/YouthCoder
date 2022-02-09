@@ -1,37 +1,31 @@
-import React, { useState } from "react";
-import {
-  Nav,
-  Navbar,
-  NavbarBrand,
-  NavbarToggler,
-  Collapse,
-  NavItem,
-  NavLink,
-  UncontrolledDropdown,
-  DropdownToggle,
-  DropdownMenu,
-  DropdownItem,
-  NavbarText,
-  Button,
-} from "reactstrap";
+import React, { useState } from 'react';
+import { Nav, Navbar, NavbarBrand, NavbarToggler, Collapse, NavItem, NavLink, UncontrolledDropdown, DropdownToggle, DropdownMenu, DropdownItem, NavbarText, Button } from 'reactstrap';
 
 const NavbarComponent = () => {
   const [users, setUsers] = useState([]);
-  const userInfo = localStorage.getItem("userInfo");
+  const userInfo = localStorage.getItem('userInfo');
 
   const editUser = () => {
-    let id = JSON.parse(userInfo).id ;
-    window.location.href = "/profile/" + id ;
-  }
+    let id = JSON.parse(userInfo).id;
+    window.location.href = '/profile/' + id;
+  };
 
   const logoutUser = () => {
     localStorage.clear();
-    window.location.href = "/login";
+    window.location.href = '/login';
   };
 
   return (
     <div>
-      <Navbar color="dark" container="sm" expand="sm" fixed="" dark>
+      <Navbar
+        style={{
+          backgroundColor: '#008080',
+        }}
+        container="sm"
+        expand="sm"
+        fixed=""
+        dark
+      >
         <NavbarBrand href="/">Home</NavbarBrand>
         <NavbarToggler onClick={function noRefCheck() {}} />
         <Collapse navbar>
@@ -46,17 +40,19 @@ const NavbarComponent = () => {
           <UncontrolledDropdown>
             {userInfo ? (
               <div>
-              <DropdownToggle color="light" caret>
-                {  JSON.parse(userInfo).username}
-              </DropdownToggle>
-              <DropdownMenu right>
-              <DropdownItem onClick={() => editUser()}>Edit Profile</DropdownItem>
-              <DropdownItem divider />
-              <DropdownItem onClick={() => logoutUser()}>Log Out</DropdownItem>
-            </DropdownMenu>
+                <DropdownToggle color="light" caret>
+                  {JSON.parse(userInfo).username}
+                </DropdownToggle>
+                <DropdownMenu right>
+                  <DropdownItem onClick={() => editUser()}>Edit Profile</DropdownItem>
+                  <DropdownItem divider />
+                  <DropdownItem onClick={() => logoutUser()}>Log Out</DropdownItem>
+                </DropdownMenu>
               </div>
             ) : (
-              <Button className="btn btn-light" href="/login/">Login</Button>
+              <Button className="btn btn-light" href="/login/">
+                Login
+              </Button>
               // <DropdownToggle color="light" caret>
               //   Login
               // </DropdownToggle>
