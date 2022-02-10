@@ -45,6 +45,9 @@ const NavbarComponent = () => {
                 Users
               </NavLink>
             </NavItem>
+            <NavItem>
+              <NavLink href="/contact">Contact Us</NavLink>
+            </NavItem>
           </Nav>
           <UncontrolledDropdown>
             {userInfo ? (
