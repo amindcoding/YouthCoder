@@ -7,7 +7,7 @@ import ProfilePage from './pages/ProfilePage';
 import ArtikelPage from './pages/ArtikelPage';
 import ForumPage from './pages/ForumPage';
 import UsersPage from './pages/UsersPage';
-import Contact from './components/Contact';
+import ContactPage from './pages/ContactPage';
 
 function App() {
   return (
@@ -20,7 +20,7 @@ function App() {
         <Route exact path="/articles" element={<ArtikelPage />} />
         <Route exact path="/forum" element={<ForumPage />} />
         <Route exact path="/users" element={<UsersPage />} />
-        <Route exact path="/contact" element={<Contact />} />
+        <Route exact path="/contact" element={<ContactPage />} />
       </Routes>
     </>
   );
