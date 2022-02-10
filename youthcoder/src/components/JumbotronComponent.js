@@ -40,13 +40,13 @@ const JumbotronComponent = () => {
                   </div>
                 )}
                 <div className="mt-4">
-                  <a href="#article" class="btn btn-outline-light mr-2">
-                    Lihat Artikel
+                  <a href="/articles" class="btn btn-outline-light mr-2">
+                    Belajar Sekarang
                   </a>
                 </div>
               </div>
               <div className="col-lg-6 d-none d-lg-block">
-                <img className="img" src={logo} />
+                <img className="img-fluid" src={logo} />
               </div>
             </div>
           </div>

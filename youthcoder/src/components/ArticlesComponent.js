@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Tabs, Tab, Grid, Cell, Card, CardTitle, CardText, CardActions, Button, CardMenu, IconButton } from 'react-mdl';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faShareAlt } from '@fortawesome/free-solid-svg-icons';
+import { Container } from 'reactstrap';
 
 class ArticlesComponent extends Component {
   constructor(props) {
@@ -28,7 +29,7 @@ class ArticlesComponent extends Component {
               </CardTitle>
               <CardText>Hyper Text MarkUp Language adalah Bahasa markup standar untuk pembuatan halaman website. Dengan kata lain, HTML merupakan wadah / tempat bagi bahasa pemrograman website lainnya.</CardText>
               <CardActions border>
-                <Button colored>show</Button>
+                <Button colored>Tutorial</Button>
                 <Button colored>Codepen</Button>
                 <Button colored>Pdf</Button>
               </CardActions>
@@ -71,7 +72,7 @@ class ArticlesComponent extends Component {
               >
                 NodeJS
               </CardTitle>
-              <CardText>NodeJs adalah sebuah platform yang digunakan untuk mengembangkan aplikasi berbasis web dengan javascript seagai bahasa pemrogramannya yang dapat dijalankan di windows, mac, maupun linux.</CardText>
+              <CardText>NodeJs adalah sebuah platform yang digunakan untuk mengembangkan aplikasi berbasis web dengan javascript seagai yang dapat dijalankan di windows, mac, dan linux.</CardText>
               <CardActions border>
                 <Button colored>Tutorial</Button>
                 <Button colored>CodePen</Button>
@@ -102,12 +103,7 @@ class ArticlesComponent extends Component {
               </CardTitle>
               <CardText>Pelajari lebih jelas dengan klik play video</CardText>
               <CardActions border>
-                <Button colored>
-                  Play Video
-                  {/* <iframe src="https://www.youtube.com/watch?v=z-QpyHJBQtQ" height="500px" width="1000px">
-                    play
-                  </iframe> */}
-                </Button>
+                <Button colored>Play Video</Button>
               </CardActions>
               <CardMenu style={{ color: '#fff' }}>
                 <FontAwesomeIcon icon={faShareAlt} />
@@ -241,11 +237,13 @@ class ArticlesComponent extends Component {
           <Tab>eBook</Tab>
         </Tabs>
 
-        <Grid>
-          <Cell col={12}>
-            <div className="content">{this.toggleCategories()}</div>
-          </Cell>
-        </Grid>
+        <Container id="list">
+          <Grid>
+            <Cell col={12}>
+              <div className="content">{this.toggleCategories()}</div>
+            </Cell>
+          </Grid>
+        </Container>
       </div>
     );
   }

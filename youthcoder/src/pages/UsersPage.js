@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
-import JumbotronComponent from '../components/JumbotronComponent';
 import NavbarComponent from '../components/NavbarComponent';
+import JumbotronUsersComponent from '../components/JumbotronUsersComponent';
 
-export default class HomePage extends Component {
+export default class UsersPage extends Component {
   render() {
     return (
       <div>
         <NavbarComponent />
-        <JumbotronComponent />
+        <JumbotronUsersComponent />
       </div>
     );
   }

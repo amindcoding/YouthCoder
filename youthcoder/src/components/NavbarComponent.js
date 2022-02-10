@@ -35,20 +35,16 @@ const NavbarComponent = () => {
         <Collapse navbar>
           <Nav className="me-auto" navbar>
             <NavItem>
-              <NavLink href="/article/">Artikel</NavLink>
+              <NavLink href="/articles">Artikel</NavLink>
             </NavItem>
             <NavItem>
-              <NavLink href="/forum">forum</NavLink>
+              <NavLink href="/forum">Forum</NavLink>
             </NavItem>
-            {userInfo ? (
-              <NavItem>
-                <NavLink onClick={() => listUsers()} href="/users/">
-                  Users
-                </NavLink>
-              </NavItem>
-            ) : (
-              <span></span>
-            )}
+            <NavItem>
+              <NavLink onClick={() => listUsers()} href="/users/">
+                Users
+              </NavLink>
+            </NavItem>
           </Nav>
           <UncontrolledDropdown>
             {userInfo ? (
