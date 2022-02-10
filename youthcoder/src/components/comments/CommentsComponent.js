@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { Container } from 'reactstrap';
 import CommentForm from './CommentFormComponent';
 import Comment from './CommentComponent';
 import { getComments as getCommentsApi, createComment as createCommentApi, updateComment as updateCommentApi, deleteComment as deleteCommentApi } from './ApiCommentsComponent';
@@ -43,25 +44,29 @@ const Comments = ({ commentsUrl, currentUserId }) => {
   }, []);
 
   return (
-    <div className="comments">
-      <h3 className="comments-title">Comments</h3>
-      <div className="comment-form-title">Write comment</div>
-      <CommentForm submitLabel="Write" handleSubmit={addComment} />
-      <div className="comments-container">
-        {rootComments.map((rootComment) => (
-          <Comment
-            key={rootComment.id}
-            comment={rootComment}
-            replies={getReplies(rootComment.id)}
-            activeComment={activeComment}
-            setActiveComment={setActiveComment}
-            addComment={addComment}
-            deleteComment={deleteComment}
-            updateComment={updateComment}
-            currentUserId={currentUserId}
-          />
-        ))}
-      </div>
+    <div>
+      <Container id="diskusi">
+        <div className="comments">
+          <h3 className="comments-title">Comments</h3>
+          <div className="comment-form-title">Write comment</div>
+          <CommentForm submitLabel="Write" handleSubmit={addComment} />
+          <div className="comments-container">
+            {rootComments.map((rootComment) => (
+              <Comment
+                key={rootComment.id}
+                comment={rootComment}
+                replies={getReplies(rootComment.id)}
+                activeComment={activeComment}
+                setActiveComment={setActiveComment}
+                addComment={addComment}
+                deleteComment={deleteComment}
+                updateComment={updateComment}
+                currentUserId={currentUserId}
+              />
+            ))}
+          </div>
+        </div>
+      </Container>
     </div>
   );
 };

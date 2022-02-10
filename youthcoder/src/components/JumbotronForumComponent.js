@@ -30,13 +30,17 @@ const JumbotronForumComponent = () => {
                       ) : (
                         <span></span>
                       )}
-                      Kamu boleh berdiskusi di forum ini
+                      Kamu boleh{' '}
+                      <a href="#diskusi" class="btn btn-outline-light fs-3">
+                        berdiskusi
+                      </a>{' '}
+                      di forum ini
                     </p>
                   </div>
                 </div>
                 <div className="col-12 col-md-6 d-flex justify-content-center">
                   <picture>
-                    <img src={forum} width="200" />
+                    <img src={forum} width="400" />
                   </picture>
                 </div>
               </div>

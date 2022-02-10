@@ -23,8 +23,8 @@ const JumbotronUsersComponent = () => {
                       {userInfo ? (
                         <span>
                           {' '}
-                          <a href="#table" class="btn btn-outline-light mr-2">
-                            Lihat Daftar Teman
+                          <a href="#list" class="btn btn-outline-light mr-2">
+                            Lihat List Data
                           </a>
                         </span>
                       ) : (
@@ -35,7 +35,7 @@ const JumbotronUsersComponent = () => {
                 </div>
                 <div className="col-12 col-md-6 d-flex justify-content-center">
                   <picture>
-                    <img src={pengguna} width="300" />
+                    <img src={pengguna} width="400" />
                   </picture>
                 </div>
               </div>
