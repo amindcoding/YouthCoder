@@ -14,31 +14,28 @@ const Footer = () => {
     <section id="footer">
       <div className="container footer">
         <div className="footer-box">
-          <h4>
-            Useful Links
-          </h4>
+          <h3>Useful Links</h3>
           <div className="footer-links">
-            <a href="/">&bull; Home</a>
-            <a href="/">&bull; Articles</a>
-            <a href="/">&bull; Forum</a>
-            <a href="/">&bull; Login & Register</a>
+            <li>Home</li>
+            <li>Articles</li>
+            <li>Forum</li>
+            <li>Login & Register</li>
           </div>
         </div>
         <div className="footer-box">
-          <h4>Support</h4>
-          <div className="footer-links">
-            <a href="/">&bull; Home</a>
-            <a href="/">&bull; Articles</a>
-            <a href="/">&bull; Forum</a>
-            <a href="/">&bull; Login & Register</a>
+          <h3>Members</h3>
+          <div className="footer-members">
+            <li>Mohammad Amin Rizki</li>
+            <li>Muhammad Ayyub Ainurohqim</li>
+            <li>Siska Ameliya</li>
           </div>
         </div>
         <div className="footer-box">
-          <h4>Contact Us</h4>
+          <h3>Contact Us</h3>
           <div className="footer-contact u-text-small">
             <p>
-              <FaMapMarkerAlt /> &nbsp; Address: Jl. Raya Bekasi Km.22, Cakung
-              Jakarta 13910
+              <FaMapMarkerAlt /> &nbsp; Address: Jl.Raya Bekasi Km.22, Cakung
+              Jakarta
             </p>
             <p>
               <FaPhoneAlt /> &nbsp; Phone: +62 000 0000 0000
