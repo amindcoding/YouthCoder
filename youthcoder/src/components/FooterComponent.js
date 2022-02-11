@@ -4,21 +4,32 @@ import './Footer.css';
 import { FaMapMarkerAlt, FaPhoneAlt, FaFax, FaEnvelope, FaGlobe } from 'react-icons/fa';
 
 const Footer = () => {
+  const userInfo = localStorage.getItem('userInfo');
+
   return (
-    <section
-      id="footer"
-      style={{
-        backgroundColor: '#f0f0f0',
-      }}
-    >
+    <section id="footer">
       <div className="container footer">
         <div className="footer-box">
           <h3>Useful Links</h3>
           <div className="footer-links">
-            <li>Home</li>
-            <li>Articles</li>
-            <li>Forum</li>
-            <li>Login & Register</li>
+            <a class="btn btn-outline-light m-2" href="/">
+              Home
+            </a>
+
+            <a class="btn btn-outline-light m-2" href="/articles">
+              Articles
+            </a>
+            <br />
+            <a class="btn btn-outline-light m-2" href="/forum">
+              Forum
+            </a>
+            {userInfo ? (
+              <span></span>
+            ) : (
+              <a class="btn btn-outline-light m-2" href="/register">
+                Register
+              </a>
+            )}
           </div>
         </div>
         <div className="footer-box">
