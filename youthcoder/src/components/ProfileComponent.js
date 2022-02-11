@@ -1,7 +1,5 @@
 import React, { useEffect, useState } from "react";
 import {
-  Button,
-  Card,
   Col,
   Container,
   Form,
@@ -10,8 +8,6 @@ import {
   Label,
   Row,
 } from "reactstrap";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBackspace } from "@fortawesome/free-solid-svg-icons";
 import axios from "axios";
 
 export const ProfileComponent = () => {
@@ -76,14 +72,14 @@ export const ProfileComponent = () => {
 
   return (
     <Container>
-      <div className="card-body p-4 p-md-5">
+      <div className="card-body p-4 p-md-5 mx-auto w-75">
         <Row>
           <Col>
             <h3 className="mb-4 pb-2 pb-md-0 mb-md-5">Edit Profile User</h3>
           </Col>
           <Col>
-            <a href="/" className="btn btn-primary float-end">
-              Back To Home <FontAwesomeIcon icon={faBackspace} />
+            <a href="/" className="btn-link float-end">
+              Back To Home
             </a>
           </Col>
         </Row>

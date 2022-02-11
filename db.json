@@ -1,39 +1,6 @@
 {
   "users": [
     {
-      "id": 1,
-      "firstName": "Muhamad",
-      "lastName": "Ayyub",
-      "age": "18",
-      "gender": "L",
-      "email": "ayyub@gmail.com",
-      "phoneNumber": "085852741963",
-      "username": "Ayyub123",
-      "password": "Muhayyub123"
-    },
-    {
-      "id": 2,
-      "firstName": "Amin",
-      "lastName": "Rizki",
-      "age": "18",
-      "gender": "L",
-      "email": "rizki@gmail.com",
-      "phoneNumber": "085852741963",
-      "username": "Aminrizki1",
-      "password": "Aminrizki1"
-    },
-    {
-      "id": 3,
-      "firstName": "Siska",
-      "lastName": "Amelia",
-      "age": "18",
-      "gender": "P",
-      "email": "amelia@gmail.com",
-      "phoneNumber": "085852741963",
-      "username": "Amelya5",
-      "password": "Siscaamelya5"
-    },
-    {
       "id": "86232bf033d",
       "firstName": "Achmad",
       "lastName": "Firdaus",
@@ -43,6 +10,50 @@
       "phoneNumber": "082211445566",
       "username": "Firdaus1",
       "password": "Firdaus1"
+    },
+    {
+      "id": "3cd3474ca54",
+      "firstName": "Wildan",
+      "lastName": "Hamzah",
+      "age": "19",
+      "gender": "L",
+      "email": "wildan@gmail.com",
+      "phoneNumber": "085274109637",
+      "username": "Wildan0909",
+      "password": "Wildan0909"
+    },
+    {
+      "id": "b9f257a4a92",
+      "firstName": "Amin",
+      "lastName": "Rizki",
+      "age": "18",
+      "gender": "L",
+      "email": "rizki@gmail.com",
+      "phoneNumber": "085741852963",
+      "username": "Aminrizki1",
+      "password": "Aminrizki1"
+    },
+    {
+      "id": "3e0381c1702",
+      "firstName": "Muhamad",
+      "lastName": "Ayyub",
+      "age": "18",
+      "gender": "L",
+      "email": "ayyub@gmail.com",
+      "phoneNumber": "085741852963",
+      "username": "Ayyub123",
+      "password": "Muhayyub123"
+    },
+    {
+      "id": "fa77b53f189",
+      "firstName": "Siska",
+      "lastName": "Amelia",
+      "age": "18",
+      "gender": "P",
+      "email": "amelia@gmail.com",
+      "phoneNumber": "085741852963",
+      "username": "Amelya5",
+      "password": "Siscaamelya5"
     }
   ]
 }

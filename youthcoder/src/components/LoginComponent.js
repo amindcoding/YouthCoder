@@ -1,7 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { Col, Container, Form, FormGroup, Input, Label, Row } from "reactstrap";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBackspace } from "@fortawesome/free-solid-svg-icons";
 import axios from "axios";
 
 export const LoginComponent = () => {
@@ -29,26 +27,28 @@ export const LoginComponent = () => {
     e.preventDefault();
     // alert("oke");
     let data = [...users];
-    const suksesLogin = users.filter(usr => usr.username === formData.username && usr.password === formData.password) 
-    if(suksesLogin.length > 0) {
-        localStorage.setItem('userInfo', JSON.stringify(...suksesLogin))
-        window.location.href = "/"
-    }else {
-        alert("Username atau Password yang anda masukkan salah!")
+    const suksesLogin = data.filter(
+      (usr) => usr.username === formData.username && usr.password === formData.password
+    );
+    if (suksesLogin.length > 0) {
+      localStorage.setItem("userInfo", JSON.stringify(...suksesLogin));
+      window.location.href = "/";
+    } else {
+      alert("Username atau Password yang anda masukkan salah!");
     }
   }
 
   return (
     <Container>
-      <div className="card-body p-4 p-md-5">
+      <div className="card-body p-4 p-md-5 mx-auto w-75">
         <Row>
           <Col>
             <h3 className="mb-4 pb-2 pb-md-0 mb-md-5">Form Login</h3>
             <p className="mb-2">Masukkan username dan password anda!</p>
           </Col>
           <Col>
-            <a href="/" className="btn btn-primary float-end">
-              Back To Home <FontAwesomeIcon icon={faBackspace} />
+            <a href="/" className="btn-link float-end">
+              Back To Home
             </a>
           </Col>
         </Row>
@@ -60,8 +60,8 @@ export const LoginComponent = () => {
               name="username"
               placeholder="Username"
               type="text"
-            //   pattern="(?=.*\d).{5,}"
-            //   title="Harus mengandung minimal satu angka, dan setidaknya 5 karakter atau lebih"
+              pattern="(?=.*\d).{5,}"
+              title="Harus mengandung minimal satu angka, dan setidaknya 5 karakter atau lebih"
               onChange={handleChange}
               value={formData.username}
             />
@@ -73,8 +73,8 @@ export const LoginComponent = () => {
               name="password"
               placeholder="Password"
               type="password"
-            //   pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
-            //   title="Harus mengandung minimal satu huruf kecil satu huruf besar satu angka, dan setidaknya 8 karakter atau lebih"
+              pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+              title="Harus mengandung minimal satu huruf kecil satu huruf besar satu angka, dan setidaknya 8 karakter atau lebih"
               onChange={handleChange}
               value={formData.password}
             />

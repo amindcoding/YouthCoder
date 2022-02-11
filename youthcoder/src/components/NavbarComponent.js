@@ -1,29 +1,41 @@
-import React, { useState } from 'react';
-import { Nav, Navbar, NavbarBrand, NavbarToggler, Collapse, NavItem, NavLink, UncontrolledDropdown, DropdownToggle, DropdownMenu, DropdownItem, NavbarText, Button } from 'reactstrap';
+import React from "react";
+import {
+  Nav,
+  Navbar,
+  NavbarBrand,
+  NavbarToggler,
+  Collapse,
+  NavItem,
+  NavLink,
+  UncontrolledDropdown,
+  DropdownToggle,
+  DropdownMenu,
+  DropdownItem,
+  Button,
+} from "reactstrap";
 
 const NavbarComponent = () => {
-  const [users, setUsers] = useState([]);
-  const userInfo = localStorage.getItem('userInfo');
+  const userInfo = localStorage.getItem("userInfo");
 
   const listUsers = () => {
-    localStorage.getItem('userInfo');
+    localStorage.getItem("userInfo");
   };
 
   const editUser = () => {
     let id = JSON.parse(userInfo).id;
-    window.location.href = '/profile/' + id;
+    window.location.href = "/profile/" + id;
   };
 
   const logoutUser = () => {
     localStorage.clear();
-    window.location.href = '/login';
+    window.location.href = "/login";
   };
 
   return (
     <div>
       <Navbar
         style={{
-          backgroundColor: '#008080',
+          backgroundColor: "#008080",
         }}
         container="sm"
         expand="sm"
@@ -53,12 +65,17 @@ const NavbarComponent = () => {
             {userInfo ? (
               <div>
                 <DropdownToggle color="light" caret>
-                  {JSON.parse(userInfo).firstName} {JSON.parse(userInfo).lastName}
+                  {JSON.parse(userInfo).firstName}{" "}
+                  {JSON.parse(userInfo).lastName}
                 </DropdownToggle>
                 <DropdownMenu right>
-                  <DropdownItem onClick={() => editUser()}>Edit Profile</DropdownItem>
+                  <DropdownItem onClick={() => editUser()}>
+                    Edit Profile
+                  </DropdownItem>
                   <DropdownItem divider />
-                  <DropdownItem onClick={() => logoutUser()}>Log Out</DropdownItem>
+                  <DropdownItem onClick={() => logoutUser()}>
+                    Log Out
+                  </DropdownItem>
                 </DropdownMenu>
               </div>
             ) : (

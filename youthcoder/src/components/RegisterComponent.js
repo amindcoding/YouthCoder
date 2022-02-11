@@ -1,28 +1,34 @@
-import React, { useState, useEffect } from 'react';
-import { Button, Card, Col, Container, Form, FormGroup, Input, Label, Row } from 'reactstrap';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBackspace } from '@fortawesome/free-solid-svg-icons';
-import { uid } from 'uid';
-import axios from 'axios';
+import React, { useState, useEffect } from "react";
+import {
+  Col,
+  Container,
+  Form,
+  FormGroup,
+  Input,
+  Label,
+  Row,
+} from "reactstrap";
+import { uid } from "uid";
+import axios from "axios";
 
 export const RegisterComponent = () => {
   const [users, setUsers] = useState([]);
   // const [update, setUpdate] = useState({ id:nu});
   const [formData, setFormData] = useState({
-    id: '',
-    firstName: '',
-    lastName: '',
-    age: '',
-    gender: '',
-    email: '',
-    phoneNumber: '',
-    username: '',
-    password: '',
+    id: "",
+    firstName: "",
+    lastName: "",
+    age: "",
+    gender: "",
+    email: "",
+    phoneNumber: "",
+    username: "",
+    password: "",
   });
 
   useEffect(() => {
     //ambil data
-    axios.get('http://localhost:3004/users').then((res) => {
+    axios.get("http://localhost:3004/users").then((res) => {
       console.log(res.data);
       setUsers(res?.data ?? []);
     });
@@ -51,35 +57,35 @@ export const RegisterComponent = () => {
     };
     data.push(newData);
 
-    axios.post('http://localhost:3004/users', newData).then((res) => {
-      alert('Registered successfuly!');
+    axios.post("http://localhost:3004/users", newData).then((res) => {
+      alert("Registered successfuly!");
     });
 
     setFormData({
-      id: '',
-      firstName: '',
-      lastName: '',
-      age: '',
-      gender: '',
-      email: '',
-      phoneNumber: '',
-      username: '',
-      password: '',
+      id: "",
+      firstName: "",
+      lastName: "",
+      age: "",
+      gender: "",
+      email: "",
+      phoneNumber: "",
+      username: "",
+      password: "",
     });
 
-    window.location.href = '/login';
+    window.location.href = "/login";
   }
 
   return (
     <Container>
-      <div className="card-body p-4 p-md-5">
+      <div className="card-body p-4 p-md-5 mx-auto w-75">
         <Row>
           <Col>
             <h3 className="mb-4 pb-2 pb-md-0 mb-md-5">Form Registrasi Akun</h3>
           </Col>
           <Col>
-            <a href="/" className="btn btn-primary float-end">
-              Back To Home <FontAwesomeIcon icon={faBackspace} />
+            <a href="/" className="btn-link float-end">
+              Back To Home
             </a>
           </Col>
         </Row>
@@ -88,13 +94,29 @@ export const RegisterComponent = () => {
             <Col className="col-md-6 mb-2">
               <FormGroup>
                 <Label for="firstName">Nama Depan</Label>
-                <Input id="firstName" name="firstName" placeholder="Nama Depan" type="text" onChange={handleChange} value={formData.firstName} required />
+                <Input
+                  id="firstName"
+                  name="firstName"
+                  placeholder="Nama Depan"
+                  type="text"
+                  onChange={handleChange}
+                  value={formData.firstName}
+                  required
+                />
               </FormGroup>
             </Col>
             <Col className="col-md-6 mb-2">
               <FormGroup>
                 <Label for="lastName">Nama Belakang</Label>
-                <Input id="lastName" name="lastName" placeholder="Nama Belakang" type="text" onChange={handleChange} value={formData.lastName} required />
+                <Input
+                  id="lastName"
+                  name="lastName"
+                  placeholder="Nama Belakang"
+                  type="text"
+                  onChange={handleChange}
+                  value={formData.lastName}
+                  required
+                />
               </FormGroup>
             </Col>
           </Row>
@@ -102,13 +124,35 @@ export const RegisterComponent = () => {
             <Col className="col-md-6 mb-2">
               <FormGroup>
                 <Label for="exampleAge">Usia</Label>
-                <Input id="exampleAge" name="age" placeholder="Usia" type="number" min={17} title="Minimal berusia 17 tahun" onChange={handleChange} value={formData.age} required />
+                <Input
+                  id="exampleAge"
+                  name="age"
+                  placeholder="Usia"
+                  type="number"
+                  min={17}
+                  title="Minimal berusia 17 tahun"
+                  onChange={handleChange}
+                  value={formData.age}
+                  required
+                />
               </FormGroup>
             </Col>
             <Col className="col-ms-6 mb-2">
               <FormGroup>
                 <Label for="exampleGender">Jenis Kelamin (L/P)</Label>
-                <Input className="text-uppercase" id="exampleGender" name="gender" placeholder="L / P" type="text" maxLength={1} pattern="[LP]" title="Hanya huruf L / P" onChange={handleChange} value={formData.gender} required />
+                <Input
+                  className="text-uppercase"
+                  id="exampleGender"
+                  name="gender"
+                  placeholder="L / P"
+                  type="text"
+                  maxLength={1}
+                  pattern="[LP]"
+                  title="Hanya huruf L / P"
+                  onChange={handleChange}
+                  value={formData.gender}
+                  required
+                />
               </FormGroup>
             </Col>
           </Row>
@@ -116,7 +160,15 @@ export const RegisterComponent = () => {
             <Col className="col-md-6 mb-2">
               <FormGroup>
                 <Label for="emailAddress">Email</Label>
-                <Input id="emailAddress" name="email" placeholder="example@email.com" type="email" onChange={handleChange} value={formData.email} required />
+                <Input
+                  id="emailAddress"
+                  name="email"
+                  placeholder="example@email.com"
+                  type="email"
+                  onChange={handleChange}
+                  value={formData.email}
+                  required
+                />
               </FormGroup>
             </Col>
             <Col className="col-md-6 mb-2">
@@ -171,12 +223,16 @@ export const RegisterComponent = () => {
             </Col>
           </Row>
           <div className="mt-4 pt-2">
-            <Input className="btn btn-primary btn-lg" type="submit" value="Daftar" />
+            <Input
+              className="btn btn-primary btn-lg"
+              type="submit"
+              value="Daftar"
+            />
           </div>
 
           <div>
             <p className="mb-0">
-              Sudah punya akun?{' '}
+              Sudah punya akun?{" "}
               <a href="/login" className="fw-bold">
                 Login disini
               </a>
