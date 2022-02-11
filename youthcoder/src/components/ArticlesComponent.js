@@ -130,7 +130,9 @@ class ArticlesComponent extends Component {
               </CardTitle>
               <CardText>Pelajari lebih jelas dengan klik play video</CardText>
               <CardActions border>
-                <Button colored>Play Video</Button>
+                <a href="https://www.youtube.com/watch?v=NBZ9Ro6UKV8&list=PLFIM0718LjIVuONHysfOK0ZtiqUWvrx4F">
+                  <Button colored>Play Video</Button>
+                </a>
               </CardActions>
               <CardMenu style={{ color: "#fff" }}>
                 <FontAwesomeIcon icon={faShareAlt} />
@@ -151,7 +153,9 @@ class ArticlesComponent extends Component {
               </CardTitle>
               <CardText>Pelajari lebih jelas dengan klik play video</CardText>
               <CardActions border>
-                <Button colored>Play Video</Button>
+                <a href="https://www.youtube.com/watch?v=RUTV_5m4VeI&list=PLFIM0718LjIWXagluzROrA-iBY9eeUt4w">
+                  <Button colored>Play Video</Button>
+                </a>
               </CardActions>
               <CardMenu style={{ color: "#fff" }}>
                 <FontAwesomeIcon icon={faShareAlt} />
@@ -165,14 +169,16 @@ class ArticlesComponent extends Component {
                   color: "#fff",
                   height: "176px",
                   background:
-                    "url(https://i.ytimg.com/vi/JPT3bFIwJYA/maxresdefault.jpg) center / cover",
+                    "url(https://berita.teknologi.id/uploads/2018/04/logo-og.png) center / cover",
                 }}
               >
                 React JS
               </CardTitle>
               <CardText>Pelajari lebih jelas dengan klik play video</CardText>
               <CardActions border>
-                <Button colored>Play Video</Button>
+                <a href="https://www.youtube.com/watch?v=ZNVRETPPW24&list=PLCZlgfAG0GXALZIcEe2t3XVuQ50JYbsbA">
+                  <Button colored>Play Video</Button>
+                </a>
               </CardActions>
               <CardMenu style={{ color: "#fff" }}>
                 <FontAwesomeIcon icon={faShareAlt} />
