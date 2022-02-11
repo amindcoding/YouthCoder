@@ -3,6 +3,7 @@ import axios from 'axios';
 import NavbarComponent from '../components/NavbarComponent';
 import JumbotronUsersComponent from '../components/JumbotronUsersComponent';
 import ListUsersComponent from '../components/ListUserComponent';
+import Footer from '../components/FooterComponent';
 
 function UsersPage() {
   // sebagai penampung API kita
@@ -23,6 +24,7 @@ function UsersPage() {
       <NavbarComponent />
       <JumbotronUsersComponent />
       <ListUsersComponent data={users} />
+      <Footer />
     </div>
   );
 }

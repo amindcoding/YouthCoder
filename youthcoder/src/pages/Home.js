@@ -5,13 +5,13 @@ import Footer from '../components/FooterComponent';
 // import TableComponent from '../components/TableComponent';
 // import { getRequestList, deleteDataRequest } from '../actions/requestAction';
 // import { connect } from 'react-redux';
-// import { Container } from 'reactstrap';
 
 class HomePage extends Component {
   //   componentDidMount() {
   //     this.props.dispatch(getRequestList());
   //     this.props.dispatch(deleteDataRequest());
   //   }
+
   render() {
     return (
       <div>
@@ -24,4 +24,4 @@ class HomePage extends Component {
   }
 }
 
-export default connect()(HomePage);
+export default HomePage;
